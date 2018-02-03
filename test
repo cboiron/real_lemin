@@ -1,0 +1,13 @@
+7954
+coin 70 0
+nout 88888 0
+##start
+pouet 11111 0
+nout 5 9
+##end
+end 1 1
+hello 4 5
+pouet-nout
+pouet-coin
+pouet-end
+nout-hello
