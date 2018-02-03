@@ -43,7 +43,8 @@ typedef struct	s_env
 }				t_env;
 
 void	parse_rooms(t_env *env, char *line);
-int 	ft_isnum(char *s);
+int 	ft_is_not_num(char *s);
+int		ft_is_not_alphanum(char *str);
 int   	get_room(t_env *env, char **data, int room_spec);
 
 

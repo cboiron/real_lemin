@@ -12,7 +12,7 @@
 
 #include "../lemin.h"
 
-int	ft_isnum(char *str)
+int	ft_is_not_num(char *str)
 {
 	int	i;
 
@@ -20,6 +20,19 @@ int	ft_isnum(char *str)
 	while (str[i++])
 	{
 		if (!ft_isdigit(str[i]))
+		return (0);
+	}
+	return (1);
+}
+
+int	ft_is_not_alphanum(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i++])
+	{
+		if (!ft_isdigit(str[i]) || !ft_isalpha(str[i]))
 		return (0);
 	}
 	return (1);

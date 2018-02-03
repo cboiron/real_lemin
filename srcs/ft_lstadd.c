@@ -18,10 +18,10 @@ void	add_room(t_room **lst, t_room *new_room)
 		new_room->next = *lst;
 	*lst = new_room;
 }
-/*
+
 void	add_link(t_link **lst, t_link *new_link)
 {
 	if (*lst)
 		new_link->next = *lst;
 	*lst = new_link;
-}*/
+}

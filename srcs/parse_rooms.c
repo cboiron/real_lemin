@@ -88,7 +88,7 @@ void	parse_rooms(t_env *env, char *line)
 	{
 		if (!line)
 			break ;
-		ft_putendl(line);
+		//ft_putendl(line);
 		if (ft_strcmp(line, "##start") == 0)
 		{
 			room = START;
@@ -103,7 +103,6 @@ void	parse_rooms(t_env *env, char *line)
 		}
 		else if (is_comment(line))
 			continue ;
-		//analyse(env, line, room);
 		if (analyse(env, line, room) < -1)
 			break;
 		//printf("retour = %d\n",analyse(env, line, room));

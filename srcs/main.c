@@ -40,21 +40,42 @@ int	main()
 	char	*line;
 	t_env	*e;
 	t_room 	*r;
+	t_link	*link;
 
 	line = NULL;
 	e = ft_memalloc(sizeof(t_env));
 	init_env(e);
 	//ft_putnbr(e->ants_nbr);
 	parse_rooms(e, line);
-	
+	sleep(15);
+	return (0);
+}
+
 	/*
+	------PARCOURS DES LIENS D'UNE SALLE---
+	link = e->begin->link;
+	while (link)
+	{
+	ft_putendl("liens :");
+	ft_putendl(link->node->name);
+	link = link->next;
+	}
+	---------------------------------------
+	*/
+
+	/*
+	---------PARCOURS DE SALLES------------
+
 	r = e->begin;
 	while (r)
 	{
 		ft_putendl(r->name);
 		r = r->next;
 	}
+	---------------------------------------
 	*/
+
+
 	/*
 	ft_putstr("start = ");
 	ft_putendl(e->start->name);
@@ -64,6 +85,3 @@ int	main()
 	//free_all(e);
 	//while (1)
 	//	i++;
-	sleep(15);
-	return (0);
-}

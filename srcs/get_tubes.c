@@ -11,15 +11,13 @@
 /* ************************************************************************** */
 
 #include "../lemin.h"
-/*
+
 t_link		*new_link(t_env *e, t_room *room)
 {
 	t_link	*link;
 
-	if (!(link = (t_link *)malloc(sizeof(t_link))))
-		exit(0);
+	link = ft_memalloc(sizeof(t_link));
 	link->node = room;
-
 	return (link);
 }
 
@@ -29,7 +27,7 @@ void		save_link(t_env *e, char *room1, char *room2)
 	t_room	*ptr1;
 	t_room	*ptr2;
 
-	tmp = e->r;
+	tmp = e->begin;
 	while (tmp)
 	{
 		if (ft_strcmp(tmp->name, room1) == 0)
@@ -38,7 +36,7 @@ void		save_link(t_env *e, char *room1, char *room2)
 			ptr2 = tmp;
 		tmp = tmp->next;
 	}
-	tmp = e->r;
+	tmp = e->begin;
 	while (tmp)
 	{
 		if (ft_strcmp(tmp->name, room2) == 0)
@@ -47,7 +45,7 @@ void		save_link(t_env *e, char *room1, char *room2)
 			add_link(&ptr2->link, new_link(e, ptr1));
 		tmp = tmp->next;
 	}
-}*/
+}
 
 int			check_names(t_env *e, char *room1, char *room2)
 {
@@ -69,7 +67,7 @@ int			check_names(t_env *e, char *room1, char *room2)
 	if (match1 == 1 && match2 == 1)
 	{
 		//ft_putendl("rooms ok");
-		//save_link(e, room1, room2);
+		save_link(e, room1, room2);
 		return (1);
 	}
 	else

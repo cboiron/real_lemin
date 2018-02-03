@@ -14,15 +14,27 @@
 
 int		check_room_format(t_env *env, char **room)
 {
+	t_room	*tmp;
+
+	tmp = NULL;
 	if (!room[0] || !room[1] || !room[2])
 		return (-6);
-	if (!ft_isalpha((int)room[0]) || !ft_isnum(room[1]) || !ft_isnum(room[2]))
+	if (ft_is_not_alphanum(room[0]) || ft_is_not_num(room[1]) 
+		|| ft_is_not_num(room[2]))
 		return (-7);
 	if (room[0][0] == 'L')
 		return (-8);
-	//if (ft_atoi(room[1]) < INT_MIN || ft_atoi(room[2]) < INT_MIN ||
-	//		ft_atoi(room[1]) > INT_MAX || ft_atoi(room[2]) > INT_MAX)
-	//	return (0);
+	if (env->begin)
+	{
+		tmp = env->begin;	
+		while (tmp)
+		{
+			if (ft_strcmp(tmp->name, room[0]) == 0)
+				return (-18);
+			tmp = tmp->next;
+		}
+		//ft_putendl("\n\n");
+	}
 	return (1);
 }
 
@@ -36,8 +48,10 @@ int   	get_room(t_env *env, char **data, int room_spec)
 	t_room	*new;
 
 	new = NULL;
+
 	if (!check_room_format((env), data))
 		return (-9);
+
 	new = ft_memalloc(sizeof(t_room));
 	//init_room(new);
 	//ft_putendl(data[0]);
