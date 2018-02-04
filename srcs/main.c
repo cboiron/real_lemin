@@ -48,9 +48,8 @@ int	main()
 	//ft_putnbr(e->ants_nbr);
 	parse_rooms(e, line);
 	treat_data(e);
-	ft_putendl(e->start->name);
-	ft_putendl(e->end->name);
-	
+	//ft_putendl(e->start->name);
+	//ft_putendl(e->end->name);
 	//sleep(15);
 	return (0);
 }

@@ -45,20 +45,14 @@ int		check_room_format(t_env *env, char **room)
 	return (1);
 }
 
-void	init_room(t_room *room)
-{
-	
-}
 int   	get_room(t_env *env, char **data, int room_spec)
 //int   	stock_rooms(t_env *e, char *line, int spec)
 {
 	t_room	*new;
 
 	new = NULL;
-
 	if (!check_room_format((env), data))
 		return (-9);
-
 	new = ft_memalloc(sizeof(t_room));
 	//init_room(new);
 	//ft_putendl(data[0]);
