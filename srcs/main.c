@@ -47,7 +47,10 @@ int	main()
 	init_env(e);
 	//ft_putnbr(e->ants_nbr);
 	parse_rooms(e, line);
-	sleep(15);
+	ft_putendl(e->start->name);
+	ft_putendl(e->end->name);
+	//treat_data(e);
+	//sleep(15);
 	return (0);
 }
 

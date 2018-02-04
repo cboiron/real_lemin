@@ -23,14 +23,21 @@ int		check_room_format(t_env *env, char **room)
 		|| ft_is_not_num(room[2]))
 		return (-7);
 	if (room[0][0] == 'L')
-		return (-8);
+	{	
+		ft_putendl("No 'L' at the start of a room name authorized");
+			exit(0);
+	}
 	if (env->begin)
 	{
 		tmp = env->begin;	
 		while (tmp)
 		{
 			if (ft_strcmp(tmp->name, room[0]) == 0)
+			{
+				ft_putendl("two different rooms can't have the same name");
+				exit(0);
 				return (-18);
+			}
 			tmp = tmp->next;
 		}
 		//ft_putendl("\n\n");

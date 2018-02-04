@@ -61,7 +61,7 @@ int analyse(t_env *env, char *line,  int room_spec)
 		ret = (get_tube((env), ft_strsplit(line, '-')));
 		free(split_space[0]);
 	}
-	else if (split_space[0] && split_space[1] && split_space[2])
+	else if (split_space[0] && split_space[1] && split_space[2] && (env)->ants_nbr != -5)
 	{
 		//ft_putendl("c'est une salle");
 		ret = (get_room((env), split_space, room_spec));
@@ -71,7 +71,6 @@ int analyse(t_env *env, char *line,  int room_spec)
 	}
 	else if (is_comment(line))
 		ret = (0);
-	
 	free(split_space);
 	return (ret);
 }

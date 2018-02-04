@@ -36,16 +36,17 @@ typedef struct	s_room
 
 typedef struct	s_env
 {
+	int			ants_nbr;
 	struct 		s_room *start;
 	struct 		s_room *end;
 	struct   	s_room *begin;
-	long		ants_nbr;
 }				t_env;
 
 void	parse_rooms(t_env *env, char *line);
 int 	ft_is_not_num(char *s);
 int		ft_is_not_alphanum(char *str);
 int   	get_room(t_env *env, char **data, int room_spec);
+void	treat_data(t_env *e);
 
 
 
@@ -63,7 +64,6 @@ void	find_paths(t_env *env);
 void	starting(t_env *e);
 void	error();
 t_room	*stock_rooms(t_env *e, char *line, int spec);
-
 
 void	print_links(t_env *e);
 
