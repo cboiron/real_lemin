@@ -12,55 +12,9 @@
 
 #include "../lemin.h"
 
-/*
- * Verifie qu'il y ai un debut ET une fin ET quelles soient differentes
- */
-/*
-void		check_data(t_env *e)
-{
-	t_room	*tmp;
-	int		start;
-	int		end;
-
-	start = 0;
-	end = 0;
-	tmp = e->r;
-	while (tmp)
-	{
-		if (tmp->start == 1)
-		{
-			e->start = ft_strdup(tmp->name);
-			start++;
-		}
-		if (tmp->end == 1)
-		{
-			e->end = ft_strdup(tmp->name);
-			end++;
-		}
-		tmp = tmp->next;
-	}
-	if (end != 1 || start != 1 || ft_strcmp(e->end, e->start) == 0)
-		error();
-}
-
-int			count_links(t_link *link)
-{
-	int		count;
-
-	count = 0;
-	while (link)
-	{
-		link = link->next;
-		count++;
-	}
-	ft_putendl("count = ");
-	ft_putnbr(count);
-	ft_putendl("");
-	return (count);
-}
 //.   CA BUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 //		SEGFAULT
-
+/*
 t_room		**fill_tab(t_env *e, t_link *link)
 {
 	int		nb_links;
