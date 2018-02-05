@@ -16,8 +16,8 @@
 int		go_in_room(t_room *room, t_env *env)
 {
 	t_link	*link;
-	int		i;
-	i = -1;
+	//int		i;
+	//i = -1;
 	
 	link = room->link;
 	room->visited = 1;
@@ -26,10 +26,10 @@ int		go_in_room(t_room *room, t_env *env)
 		//ft_putnbr(tmp->length);
 		ft_putendl(room->name);
 		ft_putendl("exit found");
-		while(1)
-			i++;
-		exit(1);
-		//return (1);
+		//while(1)
+		//	i++;
+		//exit(1);
+		return (1);
 		//exit(1);
 	}
 	while (link)
@@ -39,7 +39,7 @@ int		go_in_room(t_room *room, t_env *env)
 			//ft_putstr("J'explore ");
 			//ft_putendl(link->node->name);
 			go_in_room(link->node, env);
-			link->node->visited = 0;
+			//link->node->visited = 0;
 		}
 		link = link->next;
 	}
@@ -92,6 +92,6 @@ void	treat_data(t_env *env)
 	env->start->visited = 1;
 	if (go_in_room(env->start, env) == 1)
 		exit(1);
-	else
-		ft_putendl("no path");
+	//else
+		//ft_putendl("no path");
 }

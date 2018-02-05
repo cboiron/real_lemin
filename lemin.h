@@ -19,6 +19,12 @@
 # define START 50
 # define END 60
 
+typedef struct s_path
+{
+	struct 		s_room *start;
+	struct 		s_room *next;
+}				t_path;
+
 typedef struct	s_link
 {
 	struct  	s_room *node;
@@ -37,6 +43,7 @@ typedef struct	s_room
 typedef struct	s_env
 {
 	int			ants_nbr;
+	struct 		s_path *path;
 	struct 		s_room *start;
 	struct 		s_room *end;
 	struct   	s_room *begin;
@@ -47,7 +54,9 @@ int 	ft_is_not_num(char *s);
 int		ft_is_not_alphanum(char *str);
 int   	get_room(t_env *env, char **data, int room_spec);
 void	treat_data(t_env *e);
-
+void	add_room(t_room **lst, t_room *new_room);
+void	add_link(t_link **lst, t_link *new_link);
+void	add_path(t_room **path, t_room *new_room);
 
 
 t_room	**links_in_tab(t_env *e, char *room_name);
@@ -55,8 +64,6 @@ int		get_start_end(t_env *env, char **cmd);
 int		get_tube(t_env *env, char **tube);
 int		analyse_line(t_env *env, char *line);
 long	nb_fourmi(char *line);
-void	add_room(t_room **lst, t_room *new_room);
-void	add_link(t_link **lst, t_link *new_link);
 void	del_lst(t_env **env);
 void	parse_tubes(t_env *env, char *line);
 void	stock_tubes(t_env *env, char *tube);

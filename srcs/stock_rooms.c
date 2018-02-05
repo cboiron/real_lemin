@@ -21,7 +21,10 @@ int		check_room_format(t_env *env, char **room)
 		return (-6);
 	if (ft_is_not_alphanum(room[0]) || ft_is_not_num(room[1]) 
 		|| ft_is_not_num(room[2]))
+	{
+		ft_putendl("Wrong romm format");
 		return (-7);
+	}
 	if (room[0][0] == 'L')
 	{	
 		ft_putendl("No 'L' at the start of a room name authorized");

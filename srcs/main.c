@@ -17,6 +17,7 @@ void	init_env(t_env *env)
 	env->ants_nbr = -5;
 	env->start = NULL;
 	env->end = NULL;
+	env->path = NULL;
 }
 
 void	free_all(t_env *env)

@@ -25,3 +25,10 @@ void	add_link(t_link **lst, t_link *new_link)
 		new_link->next = *lst;
 	*lst = new_link;
 }
+
+void	add_path(t_room **path, t_room *new_room)
+{
+	if (*path)
+		new_room->next = *path;
+	*path = new_room;
+}
