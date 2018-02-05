@@ -35,7 +35,6 @@ typedef struct	s_room
 {
 	char		*name;
 	int			visited;
-	int    		length;
 	struct 		s_link *link;
 	struct		s_room *next;
 	}			t_room;

@@ -22,7 +22,7 @@ int		check_room_format(t_env *env, char **room)
 	if (ft_is_not_alphanum(room[0]) || ft_is_not_num(room[1]) 
 		|| ft_is_not_num(room[2]))
 	{
-		ft_putendl("Wrong romm format");
+		ft_putendl("Wrong room format");
 		return (-7);
 	}
 	if (room[0][0] == 'L')
@@ -61,7 +61,6 @@ int   	get_room(t_env *env, char **data, int room_spec)
 	//ft_putendl(data[0]);
 	new->name = ft_strdup(data[0]);
 	new->visited = 0;
-	new->length = 0;
 	new->link = NULL;
 	new->next = NULL;
 	if (room_spec == START)
