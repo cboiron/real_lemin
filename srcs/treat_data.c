@@ -13,58 +13,36 @@
 
 #include "../lemin.h"
 
-void	go_in_room(t_room *room, t_env *env)
+int		go_in_room(t_room *room, t_env *env)
 {
-	t_room	*tmp;
+	t_link	*link;
 	//int		i;
-
 	//i = -1;
-	tmp = room;
-	ft_putchar('w');
-	if (ft_strcmp(tmp->name, env->end->name) == 0)
+	link = room->link;
+	room->visited = 1;
+	if (ft_strcmp(room->name, env->end->name) == 0)
 	{
 		//ft_putnbr(tmp->length);
-		ft_putendl(tmp->name);
+		ft_putendl(room->name);
 		ft_putendl("exit found");
 		exit(1);
+		return (1);
+		exit(1);
 	}
-	ft_putchar('e');
-		//set_path();
-	// if (tmp->visited == 0)
-	// {
-		//if (tmp)
-			while (tmp->link)
-			{
-				ft_putendl("boucle");
-				ft_putendl(tmp->link->node->name);
-				if (tmp->link->node->visited == 1)
-				{
-					tmp = tmp->link->next->node;
-					continue ;
-				}
-				ft_putstr("J'explore ");
-				ft_putendl(tmp->link->node->name);
-				tmp->link->node->visited = 1;
-				/*
-				if (ft_strcmp(tmp->link->node->name, env->end->name) == 0)
-				{
-					//ft_putnbr(tmp->length);
-					ft_putendl(tmp->name);
-					ft_putendl("exit found");
-					exit(1);
-				}
-				*/
-				//tmp->links_tab[i]->length += 1;
-				//ft_putendl(tmp->link->node->name);
-				go_in_room(tmp->link->node, env);
-				tmp->link->node->visited = 0;
-				//tmp->links_tab[i]->visited = 0;
-				//tmp->links_tab[i]->length -= 1;
-				
-			}
+	while (link)
+	{
+		if (link->node->visited != 1)
+		{
+			//ft_putstr("J'explore ");
+			//ft_putendl(link->node->name);
+			go_in_room(link->node, env);
+			link->node->visited = 0;
+		}
+		link = link->next;
+	}
 	// }
 	// else
-	// 	return ;
+	return (0);
 }
 
 int			count_links(t_room *room)
@@ -80,9 +58,6 @@ int			count_links(t_room *room)
 		link = link->next;
 		count++;
 	}
-	/*ft_putendl("count = ");
-	ft_putnbr(count);
-	ft_putendl("");*/
 	return (count);
 }
 /*
@@ -108,5 +83,8 @@ void	treat_data(t_env *env)
 {
 	check_integrity(env);
 	//count_links(env->start);
-	go_in_room(env->start, env);
+	if (go_in_room(env->start, env) == 1)
+		exit(1);
+	else
+		ft_putendl("no path");
 }

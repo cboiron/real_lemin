@@ -12,7 +12,7 @@
 
 #include "../lemin.h"
 
-
+/*
 void	go_in_room(t_room *room, t_env *e)
 {
 	t_room	*tmp;
@@ -48,7 +48,7 @@ void	go_in_room(t_room *room, t_env *e)
 	// else
 	// 	return ;
 }
-
+*/
 
 
 //.   CA BUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG

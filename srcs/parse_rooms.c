@@ -87,7 +87,7 @@ void	parse_rooms(t_env *env, char *line)
 	{
 		if (!line)
 			break ;
-		//ft_putendl(line);
+		ft_putendl(line);
 		if (ft_strcmp(line, "##start") == 0)
 		{
 			room = START;
