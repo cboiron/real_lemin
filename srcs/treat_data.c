@@ -16,8 +16,9 @@
 int		go_in_room(t_room *room, t_env *env)
 {
 	t_link	*link;
-	//int		i;
-	//i = -1;
+	int		i;
+	i = -1;
+	
 	link = room->link;
 	room->visited = 1;
 	if (ft_strcmp(room->name, env->end->name) == 0)
@@ -25,9 +26,11 @@ int		go_in_room(t_room *room, t_env *env)
 		//ft_putnbr(tmp->length);
 		ft_putendl(room->name);
 		ft_putendl("exit found");
+		while(1)
+			i++;
 		exit(1);
-		return (1);
-		exit(1);
+		//return (1);
+		//exit(1);
 	}
 	while (link)
 	{
@@ -45,6 +48,7 @@ int		go_in_room(t_room *room, t_env *env)
 	return (0);
 }
 
+/*
 int			count_links(t_room *room)
 {
 	t_link	*link;
@@ -60,6 +64,8 @@ int			count_links(t_room *room)
 	}
 	return (count);
 }
+*/
+
 /*
  * Verifie qu'il y ai un debut ET une fin ET des fourmis
  */
@@ -83,6 +89,7 @@ void	treat_data(t_env *env)
 {
 	check_integrity(env);
 	//count_links(env->start);
+	env->start->visited = 1;
 	if (go_in_room(env->start, env) == 1)
 		exit(1);
 	else
