@@ -26,9 +26,13 @@ void	add_link(t_link **lst, t_link *new_link)
 	*lst = new_link;
 }
 
-void	add_path(t_room **path, t_room *new_room)
+void	add_path(t_path **path, char *name)
 {
+	t_path	*tmp;
+
+	ft_putendl(name);
+	tmp = new_path(name);
 	if (*path)
-		new_room->next = *path;
-	*path = new_room;
+		tmp->next = *path;
+	*path = tmp;
 }

@@ -109,4 +109,5 @@ void	parse_rooms(t_env *env, char *line)
 		free(line);
 	}
 	free(line);
+	ft_putendl("----------END OF PARSING ------------`");
 }
