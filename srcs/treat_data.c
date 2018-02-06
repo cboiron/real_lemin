@@ -44,9 +44,8 @@ int		go_in_room(t_room *room, t_env **env, t_path **path)
 		{
 			add_to_path(path, link->node->name);
 			go_in_room(link->node, env, path);
-			if ((*env)->end_found == 1) {
+			if ((*env)->end_found == 1)
 				return (1);
-			}
 				//ft_putendl("TATEWSGFDV");
 			del_from_path(path, link->node->name);
 			link->node->visited = 0;
