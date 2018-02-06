@@ -18,6 +18,7 @@ void	init_env(t_env *env)
 	env->start = NULL;
 	env->end = NULL;
 	env->path = NULL;
+	env->end_found = 0;
 }
 
 void	free_all(t_env *env)

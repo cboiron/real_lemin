@@ -26,13 +26,28 @@ void	add_link(t_link **lst, t_link *new_link)
 	*lst = new_link;
 }
 
-void	add_path(t_path **path, char *name)
+void	add_to_path(t_path **path, char *name)
 {
 	t_path	*tmp;
 
-	ft_putendl(name);
+	//ft_putendl(name);
 	tmp = new_path(name);
 	if (*path)
 		tmp->next = *path;
 	*path = tmp;
+}
+
+void	del_from_path(t_path **path, char *name)
+{
+	t_path 	*tmp;
+
+	tmp = *path;
+	*path = (*path)->next;
+	free(tmp);
+	//ft_putendl("je free : ");
+	//ft_putendl((*path)->name);
+	//ft_putendl("dans name: ");
+	//ft_putendl(name);
+//	free(path);
+//	*path = tmp;
 }

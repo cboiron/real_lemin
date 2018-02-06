@@ -23,35 +23,35 @@ t_path	*new_path(char *name)
 	return (path);
 }
 
-int		go_in_room(t_room *room, t_env *env, t_path **path)
+int		go_in_room(t_room *room, t_env **env, t_path **path)
 {
 	t_link	*link;
 	t_path 	*new_path;
 	//int		i;
 	//i = -1;
-	new_path = ft_memalloc(sizeof(t_path));
-	new_path->next = NULL;
-	new_path->name = ft_strdup(room->name);
 	link = room->link;
 	room->visited = 1;
-	if (ft_strcmp(room->name, env->end->name) == 0)
+	if (ft_strcmp(room->name, (*env)->end->name) == 0)
 	{
 		//ft_putendl(room->name);
+		(*env)->end_found = 1;
 		ft_putendl("exit found");
-		//while(1)
-		//	i++;
 		return (1);
 	}
 	while (link)
 	{
 		if (link->node->visited != 1)
 		{
-			//ft_putstr("J'explore ");
-			//ft_putendl(link->node->name);
-			add_path(&(*path), link->node->name);
+			add_to_path(path, link->node->name);
 			go_in_room(link->node, env, path);
-			//link->node->visited = 0;
+			if ((*env)->end_found == 1) {
+				return (1);
+			}
+				//ft_putendl("TATEWSGFDV");
+			del_from_path(path, link->node->name);
+			link->node->visited = 0;
 		}
+		//del_from_path(&(*path), link->node->name);
 		link = link->next;
 	}
 	return (0);
@@ -84,16 +84,7 @@ void	treat_data(t_env *env)
 	path = new_path(env->start->name);
 	check_integrity(env);
 	env->start->visited = 1;
-	go_in_room(env->start, env, &path);
-		/*
-		tmp = path;
-		room = tmp->start;
-		while (room)
-		{
-			ft_putendl(room->name);
-			room = room->next;
-		}*/
-		//exit(1);
+	go_in_room(env->start, &env, &path);
 	if (path)
 	{
 		tmp = path;
@@ -106,4 +97,14 @@ void	treat_data(t_env *env)
 	}
 	else
 		ft_putendl("no path");
+	//sleep(100);
 }
+/*
+		tmp = path;
+		room = tmp->start;
+		while (room)
+		{
+			ft_putendl(room->name);
+			room = room->next;
+		}*/
+		//exit(1);
