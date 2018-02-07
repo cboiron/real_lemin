@@ -37,3 +37,19 @@ int	ft_is_not_alphanum(char *str)
 	}
 	return (1);
 }
+
+void	free_path(t_path *path)
+{
+	t_path	*tmp;
+
+	tmp = (path);
+	while (tmp)
+	{
+		ft_putendl("salut");
+		tmp = tmp->next;
+		free(&(path)->name);
+		//free((path)->next);
+		//free((path));
+		path = tmp;
+	}
+}

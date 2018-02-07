@@ -80,19 +80,20 @@ void	treat_data(t_env *env)
 	t_path	*tmp;
 	t_room	*room;
 
-	path = new_path(env->start->name);
 	check_integrity(env);
+	path = new_path(env->start->name);
 	env->start->visited = 1;
 	go_in_room(env->start, &env, &path);
 	if (path)
 	{
 		tmp = path;
-		while (path)
+		while (tmp)
 		{
 			//ft_putendl("je passse");
-			ft_putendl(path->name);
-			path = path->next;
+			ft_putendl(tmp->name);
+			tmp = tmp->next;
 		}
+		free_path(path);
 	}
 	else
 		ft_putendl("no path");

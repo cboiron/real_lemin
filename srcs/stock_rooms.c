@@ -43,13 +43,11 @@ int		check_room_format(t_env *env, char **room)
 			}
 			tmp = tmp->next;
 		}
-		//ft_putendl("\n\n");
 	}
 	return (1);
 }
 
 int   	get_room(t_env *env, char **data, int room_spec)
-//int   	stock_rooms(t_env *e, char *line, int spec)
 {
 	t_room	*new;
 

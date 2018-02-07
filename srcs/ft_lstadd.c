@@ -43,6 +43,7 @@ void	del_from_path(t_path **path, char *name)
 
 	tmp = *path;
 	*path = (*path)->next;
+	free(tmp->name);
 	free(tmp);
 	//ft_putendl("je free : ");
 	//ft_putendl((*path)->name);

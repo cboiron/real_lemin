@@ -58,6 +58,7 @@ void	add_room(t_room **lst, t_room *new_room);
 void	add_link(t_link **lst, t_link *new_link);
 void	add_to_path(t_path **path, char *name);
 void	del_from_path(t_path **path, char *name);
+void	free_path(t_path *path);
 t_path	*new_path(char *name);
 
 t_room	**links_in_tab(t_env *e, char *room_name);
