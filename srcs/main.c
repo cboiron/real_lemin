@@ -44,6 +44,7 @@ int			main(void)
 	e = ft_memalloc(sizeof(t_env));
 	init_env(e);
 	parse_rooms(e, line);
+	free(line);
 	treat_data(e);
 	sleep(15);
 	return (0);

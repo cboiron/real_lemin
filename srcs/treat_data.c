@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../lemin.h"
 
 t_path		*new_path(char *name)
@@ -28,8 +27,8 @@ t_path		*new_path(char *name)
 int			go_in_room(t_room *room, t_env **env, t_path **path)
 {
 	t_link	*link;
-	t_path 	*new_path;
-	
+	t_path	*new_path;
+
 	link = room->link;
 	room->visited = 1;
 	if (ft_strcmp(room->name, (*env)->end->name) == 0)
@@ -64,7 +63,7 @@ int			go_in_room(t_room *room, t_env **env, t_path **path)
 void	check_integrity(t_env *env)
 {
 	if (env->ants_nbr <= 0)
-	{	
+	{
 		ft_putendl("invalid number of ants");
 		exit(0);
 	}
@@ -91,7 +90,7 @@ void	treat_data(t_env *env)
 		tmp = path;
 		while (tmp)
 		{
-			//ft_putendl("je passse");
+		//ft_putendl("je passse");
 			ft_putendl(tmp->name);
 			tmp = tmp->next;
 		}
