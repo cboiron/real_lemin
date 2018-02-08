@@ -60,6 +60,7 @@ void	add_to_path(t_path **path, char *name);
 void	del_from_path(t_path **path);
 void	free_path(t_path *path);
 t_path	*new_path(char *name);
+void	process(t_env *env, t_path *list_path);
 
 t_room	**links_in_tab(t_env *e, char *room_name);
 int		get_start_end(t_env *env, char **cmd);

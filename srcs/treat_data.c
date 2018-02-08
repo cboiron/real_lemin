@@ -91,6 +91,8 @@ void	treat_data(t_env *env)
 	env->start->visited = 1;
 	go_in_room(env->start, &env, &path);
 	if (path)
+		process(env, path);
+	if (path)
 	{
 		tmp = path;
 		while (tmp)
