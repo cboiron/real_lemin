@@ -42,12 +42,13 @@ void		free_path(t_path *path)
 {
 	t_path	*tmp;
 
-	tmp = (path);
+	tmp = path;
 	while (tmp)
 	{
-		//ft_putendl("salut");
+		ft_putendl(path->name);
 		tmp = tmp->next;
 		free(&(path)->name);
+		free(path->name);
 		path = tmp;
 	}
 }

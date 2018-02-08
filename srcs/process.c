@@ -27,7 +27,7 @@ int			get_path_length(t_path *list_path)
 	return (count);
 }
 
-char		**list_to_tab(t_path *list_path)
+char		**list_to_array(t_path *list_path)
 {
 	t_path	*tmp;
 	int		length;
@@ -46,12 +46,30 @@ char		**list_to_tab(t_path *list_path)
 	return (path);
 }
 
+void		free_array(char **path)
+{
+	int		index;
+
+	index = 0;
+	while (path[index])
+	{
+		free(path[index]);
+		index++;
+	}
+	free(path);
+}
+
 void		process(t_env *env, t_path *list_path)
 {
 	char	**path;
 	int		index;
-	
-	path = list_to_tab(list_path);
-	ft_putendl(path[0]);
-	ft_putendl(path[1]);
+
+	index = 0;
+	path = list_to_array(list_path);
+	while (path[index])
+	{
+		ft_putendl(path[index]);
+		index++;
+	}
+	free_array(path);
 }
