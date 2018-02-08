@@ -6,7 +6,7 @@
 #    By: cboiron <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 18:09:35 by cboiron           #+#    #+#              #
-#    Updated: 2018/02/08 05:09:40 by cboiron          ###   ########.fr        #
+#    Updated: 2018/02/08 09:12:48 by cboiron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@make -C ./libft
-	gcc -o $(NAME) $(OBJ) libft/libft.a
+	gcc -o $(NAME) $(OBJ) libft/libft.a -g3
 	@echo "lem-in ready"
 
 %.o : %.c

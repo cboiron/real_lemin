@@ -38,8 +38,8 @@ int			check_room_format(t_env *env, char **room)
 	tmp = NULL;
 	if (!room[0] || !room[1] || !room[2])
 		return (-6);
-	if (ft_is_not_alphanum(room[0]) || ft_is_not_num(room[1])
-		|| ft_is_not_num(room[2]))
+	if (ft_is_not_alphanum(room[0]) || !ft_is_not_num(room[1])
+		|| !ft_is_not_num(room[2]))
 		error(-7);
 	if (room[0][0] == 'L')
 		error(-8);

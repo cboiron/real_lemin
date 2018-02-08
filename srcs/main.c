@@ -46,6 +46,6 @@ int			main(void)
 	parse_rooms(e, line);
 	free(line);
 	treat_data(e);
-	sleep(15);
+	//sleep(15);
 	return (0);
 }

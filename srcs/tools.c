@@ -17,10 +17,11 @@ int			ft_is_not_num(char *str)
 	int		i;
 
 	i = 0;
-	while (str[i++])
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
+		i++;
 	}
 	return (1);
 }
@@ -30,10 +31,11 @@ int			ft_is_not_alphanum(char *str)
 	int		i;
 
 	i = 0;
-	while (str[i++])
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]) || !ft_isalpha(str[i]))
 			return (0);
+		i++;
 	}
 	return (1);
 }
@@ -45,7 +47,7 @@ void		free_path(t_path *path)
 	tmp = path;
 	while (tmp)
 	{
-		ft_putendl(path->name);
+		//ft_putendl(path->name);
 		tmp = tmp->next;
 		free(&(path)->name);
 		free(path->name);
