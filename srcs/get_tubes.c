@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/03 07:43:36 by cboiron           #+#    #+#             */
-/*   Updated: 2017/12/11 02:10:32 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/08 01:06:36 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,17 @@ int			check_names(t_env *e, char *room1, char *room2)
 	}
 	if (match1 == 1 && match2 == 1)
 	{
-		//ft_putendl("rooms ok");
 		save_link(e, room1, room2);
 		return (1);
 	}
 	else
-		//ft_putendl("rooms not ok");
-	return (0);
+		return (0);
 }
 
-int		get_tube(t_env *e, char **tube)
+int			get_tube(t_env *e, char **tube)
 {
-	char*	room1;
-	char*	room2;
+	char	*room1;
+	char	*room2;
 
 	if (tube && tube[0] && tube[1])
 	{

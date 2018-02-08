@@ -13,7 +13,7 @@
 
 #include "../lemin.h"
 
-t_path	*new_path(char *name)
+t_path		*new_path(char *name)
 {
 	t_path	*path;
 
@@ -23,12 +23,13 @@ t_path	*new_path(char *name)
 	return (path);
 }
 
-int		go_in_room(t_room *room, t_env **env, t_path **path)
+//Leaks dans ma recursive : Nom des salles qui composent le chemin
+
+int			go_in_room(t_room *room, t_env **env, t_path **path)
 {
 	t_link	*link;
 	t_path 	*new_path;
-	//int		i;
-	//i = -1;
+	
 	link = room->link;
 	room->visited = 1;
 	if (ft_strcmp(room->name, (*env)->end->name) == 0)
@@ -47,7 +48,7 @@ int		go_in_room(t_room *room, t_env **env, t_path **path)
 			if ((*env)->end_found == 1)
 				return (1);
 				//ft_putendl("TATEWSGFDV");
-			del_from_path(path, link->node->name);
+			del_from_path(path);
 			link->node->visited = 0;
 		}
 		//del_from_path(&(*path), link->node->name);
@@ -80,6 +81,7 @@ void	treat_data(t_env *env)
 	t_path	*tmp;
 	t_room	*room;
 
+	//path = NULL;
 	check_integrity(env);
 	path = new_path(env->start->name);
 	env->start->visited = 1;
@@ -99,12 +101,3 @@ void	treat_data(t_env *env)
 		ft_putendl("no path");
 	//sleep(100);
 }
-/*
-		tmp = path;
-		room = tmp->start;
-		while (room)
-		{
-			ft_putendl(room->name);
-			room = room->next;
-		}*/
-		//exit(1);
