@@ -64,12 +64,17 @@ void	check_integrity(t_env *env)
 {
 	if (env->ants_nbr <= 0)
 	{
-		ft_putendl("invalid number of ants");
+		ft_putendl("Invalid number of ants");
 		exit(0);
 	}
 	else if (!(env)->start || !(env)->end)
 	{
-		ft_putendl("starting or ending room is missing");
+		ft_putendl("Starting or ending room is missing");
+		exit(0);
+	}
+	if (!(env)->start->link || !(env)->end->link)
+	{
+		ft_putendl("Some tubes are missing");
 		exit(0);
 	}
 }
