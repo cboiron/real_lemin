@@ -6,14 +6,14 @@
 #    By: cboiron <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 18:09:35 by cboiron           #+#    #+#              #
-#    Updated: 2018/02/08 09:12:48 by cboiron          ###   ########.fr        #
+#    Updated: 2018/02/08 22:06:25 by cboiron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ./lem-in
 
 SRC = srcs/main.c srcs/parse_rooms.c srcs/stock_rooms.c srcs/ft_lstadd.c \
- srcs/get_tubes.c srcs/error.c srcs/tools.c srcs/treat_data.c srcs/process.c
+ srcs/get_tubes.c srcs/tools.c srcs/treat_data.c srcs/process.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -23,7 +23,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@make -C ./libft
-	gcc -o $(NAME) $(OBJ) libft/libft.a -g3
+	gcc -o $(NAME) $(OBJ) libft/libft.a 
 	@echo "lem-in ready"
 
 %.o : %.c

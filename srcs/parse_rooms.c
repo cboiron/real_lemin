@@ -26,13 +26,6 @@ void		free_split(char **split)
 	}
 }
 
-int			is_comment(char *line)
-{
-	if (line[0] == '#')
-		return (2);
-	return (0);
-}
-
 int			get_ants(t_env *env, char *nb_fourmi)
 {
 	int		nb;

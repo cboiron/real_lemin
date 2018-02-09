@@ -22,8 +22,6 @@ t_path		*new_path(char *name)
 	return (path);
 }
 
-//Leaks dans ma recursive : Nom des salles qui composent le chemin
-
 int			go_in_room(t_room *room, t_env **env, t_path **path)
 {
 	t_link	*link;
@@ -44,11 +42,9 @@ int			go_in_room(t_room *room, t_env **env, t_path **path)
 			go_in_room(link->node, env, path);
 			if ((*env)->end_found == 1)
 				return (1);
-				//ft_putendl("TATEWSGFDV");
 			del_from_path(path);
 			link->node->visited = 0;
 		}
-		//del_from_path(&(*path), link->node->name);
 		link = link->next;
 	}
 	return (0);
@@ -58,7 +54,7 @@ int			go_in_room(t_room *room, t_env **env, t_path **path)
  * Verifie qu'il y ai un debut ET une fin ET des fourmis
  */
 
-void	check_integrity(t_env *env)
+void		check_integrity(t_env *env)
 {
 	if (env->ants_nbr <= 0)
 	{
@@ -77,7 +73,7 @@ void	check_integrity(t_env *env)
 	}
 }
 
-void	treat_data(t_env *env)
+void		treat_data(t_env *env)
 {
 	t_path	*path;
 	t_path	*tmp;

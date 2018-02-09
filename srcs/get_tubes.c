@@ -70,10 +70,7 @@ int			check_names(t_env *e, char *room1, char *room2)
 		return (1);
 	}
 	else
-	{
-		ft_putendl("You're trying to link an unkown room");
-		exit(0);
-	}
+		return (0);
 }
 
 int			get_tube(t_env *e, char **tube)

@@ -12,25 +12,6 @@
 
 #include "../lemin.h"
 
-void		error(int nb)
-{
-	if (nb == -7)
-	{
-		ft_putendl("Wrong room format");
-		exit(0);
-	}
-	else if (nb == -8)
-	{
-		ft_putendl("No 'L' at the start of a room name authorized");
-		exit(0);
-	}
-	else if (nb == -9)
-	{
-		ft_putendl("Two different rooms can't have the same name");
-		exit(0);
-	}
-}
-
 int			check_room_format(t_env *env, char **room)
 {
 	t_room	*tmp;

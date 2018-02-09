@@ -38,7 +38,7 @@ char		**list_to_array(t_path *list_path)
 	path = ft_memalloc(sizeof(char*) * (length));
 	path[length] = NULL;
 	while (tmp)
-	{	
+	{
 		path[length - 1] = ft_strdup(tmp->name);
 		tmp = tmp->next;
 		length--;

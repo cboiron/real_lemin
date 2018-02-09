@@ -30,7 +30,6 @@ void		add_to_path(t_path **path, char *name)
 {
 	t_path	*tmp;
 
-	//ft_putendl(name);
 	tmp = new_path(name);
 	if (*path)
 		tmp->next = *path;
