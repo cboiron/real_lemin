@@ -26,6 +26,15 @@ void		free_split(char **split)
 	}
 }
 
+int			norme(t_env *env, char **split_space, int room_spec)
+{
+	int		ret;
+
+	ret = (get_room((env), split_space, room_spec));
+	free_split(split_space);
+	return (ret);
+}
+
 int			get_ants(t_env *env, char *nb_fourmi)
 {
 	int		nb;
@@ -65,10 +74,7 @@ int			analyse(t_env *env, char *line, int room_spec)
 	}
 	else if (split_space[0] && split_space[1] && split_space[2]
 		&& (env)->ants_nbr != -5)
-	{
-		ret = (get_room((env), split_space, room_spec));
-		free_split(split_space);
-	}
+		ret = norme(env, split_space, room_spec);
 	else if (is_comment(line))
 		ret = (0);
 	free(split_space);

@@ -50,10 +50,6 @@ int			go_in_room(t_room *room, t_env **env, t_path **path)
 	return (0);
 }
 
-/*
- * Verifie qu'il y ai un debut ET une fin ET des fourmis
- */
-
 void		check_integrity(t_env *env)
 {
 	if (env->ants_nbr <= 0)

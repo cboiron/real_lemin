@@ -20,31 +20,31 @@
 typedef struct		s_path
 {
 	char			*name;
-	struct s_path 	*next;
+	struct s_path	*next;
 }					t_path;
 
 typedef struct		s_link
 {
-	struct s_room 	*node;
-	struct s_link 	*next;
+	struct s_room	*node;
+	struct s_link	*next;
 }					t_link;
 
 typedef struct		s_room
 {
 	char			*name;
 	int				visited;
-	struct s_link 	*link;
-	struct s_room 	*next;
+	struct s_link	*link;
+	struct s_room	*next;
 }					t_room;
 
 typedef struct		s_env
 {
 	int				ants_nbr;
 	int				end_found;
-	struct s_path 	*path;
-	struct s_room 	*start;
-	struct s_room 	*end;
-	struct s_room 	*begin;
+	struct s_path	*path;
+	struct s_room	*start;
+	struct s_room	*end;
+	struct s_room	*begin;
 }					t_env;
 
 void				parse_rooms(t_env *env, char *line);
