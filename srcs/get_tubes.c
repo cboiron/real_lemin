@@ -12,7 +12,7 @@
 
 #include "../lemin.h"
 
-t_link		*new_link(t_env *e, t_room *room)
+t_link		*new_link(t_room *room)
 {
 	t_link	*link;
 
@@ -40,9 +40,9 @@ void		save_link(t_env *e, char *room1, char *room2)
 	while (tmp)
 	{
 		if (ft_strcmp(tmp->name, room2) == 0)
-			add_link(&ptr1->link, new_link(e, ptr2));
+			add_link(&ptr1->link, new_link(ptr2));
 		else if (ft_strcmp(tmp->name, room1) == 0)
-			add_link(&ptr2->link, new_link(e, ptr1));
+			add_link(&ptr2->link, new_link(ptr1));
 		tmp = tmp->next;
 	}
 }

@@ -6,18 +6,19 @@
 #    By: cboiron <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 18:09:35 by cboiron           #+#    #+#              #
-#    Updated: 2018/02/08 22:06:25 by cboiron          ###   ########.fr        #
+#    Updated: 2018/02/10 01:44:13 by cboiron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ./lem-in
 
 SRC = srcs/main.c srcs/parse_rooms.c srcs/stock_rooms.c srcs/ft_lstadd.c \
- srcs/get_tubes.c srcs/tools.c srcs/treat_data.c srcs/process.c
+ srcs/get_tubes.c srcs/tools.c srcs/treat_data.c srcs/process.c \
+ srcs/print_ants.c
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra -g
+S = -Wall -Werror -Wextra -g
 
 all : $(NAME)
 
@@ -27,7 +28,7 @@ $(NAME) : $(OBJ)
 	@echo "lem-in ready"
 
 %.o : %.c
-	gcc -o $@ -c $< $(FLAG)
+	gcc -o $@ -c $< $(FLAGS)
 
 clean :
 	@rm -rf $(OBJ)

@@ -25,7 +25,6 @@ t_path		*new_path(char *name)
 int			go_in_room(t_room *room, t_env **env, t_path **path)
 {
 	t_link	*link;
-	t_path	*new_path;
 
 	link = room->link;
 	room->visited = 1;
@@ -72,8 +71,6 @@ void		check_integrity(t_env *env)
 void		treat_data(t_env *env)
 {
 	t_path	*path;
-	t_path	*tmp;
-	t_room	*room;
 
 	check_integrity(env);
 	path = new_path(env->start->name);

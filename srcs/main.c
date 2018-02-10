@@ -37,8 +37,6 @@ int			main(void)
 {
 	char	*line;
 	t_env	*e;
-	t_room	*r;
-	t_link	*link;
 
 	line = NULL;
 	e = ft_memalloc(sizeof(t_env));

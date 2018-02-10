@@ -62,14 +62,17 @@ void		free_array(char **path)
 void		process(t_env *env, t_path *list_path)
 {
 	char	**path;
-	int		index;
-
-	index = 0;
 	path = list_to_array(list_path);
+
+	print_ants(env->ants_nbr, path);
+	/*
+	int index = 1;
 	while (path[index])
 	{
 		ft_putendl(path[index]);
 		index++;
 	}
 	free_array(path);
+	 */
+
 }

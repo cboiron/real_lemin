@@ -62,5 +62,6 @@ t_path				*new_path(char *name);
 void				process(t_env *env, t_path *list_path);
 int					get_tube(t_env *env, char **tube);
 void				error(int error_num);
+void				print_ants(int ants, char **path);
 
 #endif
