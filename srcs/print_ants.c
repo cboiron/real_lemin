@@ -16,7 +16,7 @@ void	print_one_turn(int path_size, char **path, int *room)
 {
 	int index;
 
-	index = 0;
+	index = 1;
 	while (index < path_size)
 	{
 		if (room[index] > 0)
@@ -41,6 +41,8 @@ void	increase_ants(int ants, char **path, int path_size)
 	int turn;
 	int x;
 
+	ft_putnbr(ants);
+	ft_putendl("antsssssss");
 	i = 1;
 	turn = 1;
 	while (i < path_size)
@@ -49,17 +51,21 @@ void	increase_ants(int ants, char **path, int path_size)
 		//ft_putnbr(room[i]);
 		i++;
 	}
+
 	while (room[path_size - 1] != ants)
 	{
 		x = 0;
-		while (x < turn)
+		// Parcours du tableau d'int
+		while (x < path_size && room[path_size - 1] < ants)
 		{
-			if (x <= ants &&room[x] == ants)
+			//ft_putnbr(room[path_size-1]);
+			//ft_putendl("nameeee");
+			if (room[x] == ants)
 			{
 				room[x] = -1;
 			}
 		//	else
-			else if (x <= ants && room[x] != -1)
+			else if (room[x] != -1 && x < turn)
 			{
 				room[x] += 1;
 			}
@@ -73,8 +79,8 @@ void	increase_ants(int ants, char **path, int path_size)
 			ft_putnbr(room[i]);
 			//ft_putendl("");
 			i++;
-		}
-		ft_putendl("");*/
+		}*/
+		ft_putendl("");
 		turn++;
 	}
 }
