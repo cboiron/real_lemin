@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 22:04:15 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/09 22:04:17 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/10 08:48:37 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ void	print_ants(int ants, char **path)
 	int path_size;
 
 	path_size = get_path_size(path);
-	//ft_putnbr(path_size);
-	increase_ants(ants, path, path_size);
+	if (path_size >= 2)
+		increase_ants(ants, path, path_size);
+	else
+		ft_putendl("No path");
 }
