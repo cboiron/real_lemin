@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 18:57:43 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/10 09:18:45 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/11 02:09:27 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ int			analyse(t_env *env, char *line, int room_spec)
 	}
 	else if (ft_strchr(line, '-') != NULL && (!(env)->start || !(env)->end)
 		&& room_spec != 0)
+	{
+		free_split(split_space);
 		ret = -3;
+	}
 	else if (ft_strchr(line, '-') != NULL)
 	{
 		ret = (get_tube((env), ft_strsplit(line, '-')));
@@ -88,7 +91,7 @@ void		parse_rooms(t_env *env, char *line)
 	room = 0;
 	while (get_next_line(0, &line) > 0)
 	{
-		if (!line)
+		if (!line || line[0] == ' ')
 			break ;
 		ft_putendl(line);
 		if (ft_strcmp(line, "##start") == 0 || ft_strcmp(line,
@@ -111,4 +114,5 @@ void		parse_rooms(t_env *env, char *line)
 		room = 0;
 		free(line);
 	}
+	free(line);
 }

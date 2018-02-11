@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 01:15:57 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/11 01:42:15 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/11 02:03:02 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ int			main(void)
 	e = ft_memalloc(sizeof(t_env));
 	init_env(e);
 	parse_rooms(e, line);
-	free(line);
-	//treat_data(e);
+	treat_data(e);
 	free_all(e);
 	free(e);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/08 04:56:47 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/08 04:56:50 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/11 01:46:43 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,8 @@ void		free_array(char **path)
 void		process(t_env *env, t_path *list_path)
 {
 	char	**path;
+
 	path = list_to_array(list_path);
-
 	print_ants(env->ants_nbr, path);
-	/*
-	int index = 1;
-	while (path[index])
-	{
-		ft_putendl(path[index]);
-		index++;
-	}
 	free_array(path);
-	 */
-
 }
