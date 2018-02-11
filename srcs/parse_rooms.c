@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 18:57:43 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/08 02:08:24 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/10 09:18:45 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,10 @@ void		parse_rooms(t_env *env, char *line)
 			continue ;
 		}
 		else if (is_comment(line))
+		{
+			free(line);
 			continue ;
+		}
 		if (analyse(env, line, room) < -1)
 			break ;
 		room = 0;

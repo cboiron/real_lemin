@@ -6,7 +6,7 @@
 #    By: cboiron <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 18:09:35 by cboiron           #+#    #+#              #
-#    Updated: 2018/02/10 01:44:13 by cboiron          ###   ########.fr        #
+#    Updated: 2018/02/10 08:55:52 by cboiron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = srcs/main.c srcs/parse_rooms.c srcs/stock_rooms.c srcs/ft_lstadd.c \
 
 OBJ = $(SRC:.c=.o)
 
-S = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra -g
 
 all : $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 01:15:57 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/08 01:09:15 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/11 01:42:15 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,24 @@ void		init_env(t_env *env)
 void		free_all(t_env *env)
 {
 	t_room	*tmp;
-
-	tmp = env->begin;
-	while (tmp)
+	t_room	*room;
+	t_link	*tmp_link;
+	t_link	*link;
+	room = env->begin;
+	tmp = NULL;
+	while (room)
 	{
-		ft_putendl(tmp->name);
-		tmp = tmp->next;
+		tmp = room->next;
+		link = room->link;
+		while (link)
+		{
+			tmp_link = link->next;
+			free(link);
+			link = tmp_link;
+		}
+		free(room->name);
+		free(room);
+		room = tmp;
 	}
 }
 
@@ -43,6 +55,8 @@ int			main(void)
 	init_env(e);
 	parse_rooms(e, line);
 	free(line);
-	treat_data(e);
+	//treat_data(e);
+	free_all(e);
+	free(e);
 	return (0);
 }
