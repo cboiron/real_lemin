@@ -63,5 +63,9 @@ void				process(t_env *env, t_path *list_path);
 int					get_tube(t_env *env, char **tube);
 void				error(int error_num);
 void				print_ants(int ants, char **path);
+void				free_split(char **split);
+int					norme(t_env *env, char **split_space, int room_spec);
+void				norme_2(char *line, int *room);
+int					norme_3(t_env *env, char *line, char **split_space);
 
 #endif

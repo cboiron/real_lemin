@@ -26,15 +26,6 @@ void		free_split(char **split)
 	}
 }
 
-int			norme(t_env *env, char **split_space, int room_spec)
-{
-	int		ret;
-
-	ret = (get_room((env), split_space, room_spec));
-	free_split(split_space);
-	return (ret);
-}
-
 int			get_ants(t_env *env, char *nb_fourmi)
 {
 	int		nb;
@@ -72,10 +63,7 @@ int			analyse(t_env *env, char *line, int room_spec)
 		ret = -3;
 	}
 	else if (ft_strchr(line, '-') != NULL)
-	{
-		ret = (get_tube((env), ft_strsplit(line, '-')));
-		free(split_space[0]);
-	}
+		ret = norme_3(env, line, split_space);
 	else if (split_space[0] && split_space[1] && split_space[2]
 		&& (env)->ants_nbr != -5)
 		ret = norme(env, split_space, room_spec);
@@ -98,11 +86,7 @@ void		parse_rooms(t_env *env, char *line)
 		if (ft_strcmp(line, "##start") == 0 || ft_strcmp(line,
 			"##end") == 0)
 		{
-			if (ft_strcmp(line, "##start") == 0)
-				room = START;
-			else
-				room = END;
-			free(line);
+			norme_2(line, &room);
 			continue ;
 		}
 		else if (is_comment(line))

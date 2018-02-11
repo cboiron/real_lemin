@@ -6,7 +6,7 @@
 #    By: cboiron <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 18:09:35 by cboiron           #+#    #+#              #
-#    Updated: 2018/02/10 08:55:52 by cboiron          ###   ########.fr        #
+#    Updated: 2018/02/11 02:56:55 by cboiron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = ./lem-in
 
 SRC = srcs/main.c srcs/parse_rooms.c srcs/stock_rooms.c srcs/ft_lstadd.c \
  srcs/get_tubes.c srcs/tools.c srcs/treat_data.c srcs/process.c \
- srcs/print_ants.c
+ srcs/print_ants.c srcs/norme.c
 
 OBJ = $(SRC:.c=.o)
 

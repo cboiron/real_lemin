@@ -27,6 +27,7 @@ void		free_all(t_env *env)
 	t_room	*room;
 	t_link	*tmp_link;
 	t_link	*link;
+
 	room = env->begin;
 	tmp = NULL;
 	while (room)

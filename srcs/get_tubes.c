@@ -83,7 +83,12 @@ int			get_tube(t_env *e, char **tube)
 		room1 = tube[0];
 		room2 = tube[1];
 		if (check_names(e, room1, room2) == 0)
+		{
+			free(tube[0]);
+			free(tube[1]);
+			free(tube);
 			return (-15);
+		}
 		free(tube[0]);
 		free(tube[1]);
 		free(tube);
