@@ -6,7 +6,7 @@
 #    By: cboiron <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 18:09:35 by cboiron           #+#    #+#              #
-#    Updated: 2018/02/11 02:56:55 by cboiron          ###   ########.fr        #
+#    Updated: 2018/02/11 03:21:26 by cboiron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,13 @@ SRC = srcs/main.c srcs/parse_rooms.c srcs/stock_rooms.c srcs/ft_lstadd.c \
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@make -C ./libft
-	gcc -o $(NAME) $(OBJ) libft/libft.a 
+	gcc -o $(NAME) $(OBJ) libft/libft.a
 	@echo "lem-in ready"
 
 %.o : %.c
