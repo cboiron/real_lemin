@@ -6,7 +6,7 @@
 /*   By: cboiron <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 18:57:43 by cboiron           #+#    #+#             */
-/*   Updated: 2018/02/11 02:09:27 by cboiron          ###   ########.fr       */
+/*   Updated: 2018/02/11 02:33:31 by cboiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int			get_ants(t_env *env, char *nb_fourmi)
 		free(nb_fourmi);
 		return (1);
 	}
+	free(nb_fourmi);
 	return (-2);
 }
 
